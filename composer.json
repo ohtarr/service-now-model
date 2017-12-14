@@ -1,5 +1,5 @@
 {
-    "name": "ohtarr/ServiceNowModel",
+    "name": "ohtarr/servicenowmodel",
     "type": "library",
     "description": "PHP7 Laravel5 component to connect to ServiceNow API",
     "keywords": [
