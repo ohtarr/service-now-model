@@ -102,7 +102,6 @@ class ServiceNowQueryBuilder extends Builder
 		$model = new $class($array);
 		$model->syncOriginal();
 		return $model;
-		// This magically converts all the results array of assoc arrays into the right model object types
 	}
 
 	public function post()
@@ -130,7 +129,6 @@ class ServiceNowQueryBuilder extends Builder
 		$model = new $class($array);
 		$model->syncOriginal();
 		return $model;
-		// This magically converts all the results array of assoc arrays into the right model object types
 	}
 
 }

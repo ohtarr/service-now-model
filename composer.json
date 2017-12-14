@@ -1,12 +1,12 @@
 {
-    "name": "ohtarr/servicenowmodel",
+    "name": "ohtarr/service-now-model",
     "type": "library",
-    "description": "PHP7 Laravel5 component to connect to ServiceNow API",
+    "description": "PHP7 Laravel5 component to connect to ServiceNow Table API",
     "keywords": [
         "php7",
         "laravel5"
         ],
-    "homepage": "http://github.com/ohtarr/ServiceNowModel",
+    "homepage": "http://github.com/ohtarr/service-now-model",
     "license": "LGPL3.0",
     "authors": [
         {
