@@ -20,7 +20,7 @@ Create a new model in your Laravel App folder PER table and set $table.  Example
 
 namespace App;
 
-class ServiceNowIncident extends ServiceNow
+class ServiceNowIncident extends ServiceNowModel
 {
 	public $table = "incident";
 }
