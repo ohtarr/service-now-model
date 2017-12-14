@@ -4,7 +4,7 @@ namespace ohtarr;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceNowIncident extends Model
+class ServiceNowModel extends Model
 {
 	protected $guarded = [];
 
