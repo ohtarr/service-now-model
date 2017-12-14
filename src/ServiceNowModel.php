@@ -3,6 +3,7 @@
 namespace ohtarr;
 
 use Illuminate\Database\Eloquent\Model;
+use ohtarr\ServiceNowQueryBuilder;
 
 class ServiceNowModel extends Model
 {
