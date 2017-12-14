@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace ohtarr;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;

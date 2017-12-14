@@ -1,9 +1,8 @@
 <?php
 
-namespace App;
+namespace ohtarr;
 
 use Illuminate\Database\Eloquent\Model;
-//use GuzzleHttp\Client as GuzzleHttpClient;
 
 class ServiceNowIncident extends Model
 {
