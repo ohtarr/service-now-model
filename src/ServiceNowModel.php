@@ -62,17 +62,11 @@ class ServiceNowModel extends Model
 	}
 
 	//Create a new Snow Ticket
-	public static function create($attribs = [])
+	public static function create(array $attributes = [])
 	{
-		$instance = new static($attribs);
+		$instance = new static($attributes);
 		//return $instance->newQuery()->post();
 		return $instance->save();
-	}
-
-	public function add_comment($comment)
-	{
-		$this->comments = $comment;
-		$this->save();
 	}
 
 }
