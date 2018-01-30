@@ -11,6 +11,7 @@ class ServiceNowQueryBuilder extends Builder
 	public $search;
 	public $client;
 	public $model;
+	public $pagination = 10000;
 
 	public function __construct($query = [])
 	{
@@ -26,20 +27,21 @@ class ServiceNowQueryBuilder extends Builder
 		return $this;
 	}
 
-	public function format_search()
-	{
-		if($this->search)
-		{
-			$search = "sysparm_query=";
-			$tmpsearch = [];
-			foreach($this->search as $key => $value)
-			{
-				$tmpsearch[] = $key . "=" . $value;
-			}
-			$search .= implode("^", $tmpsearch);
-			return $search;
-		}
-	}
+        public function format_query()
+        {
+                if($this->search)
+                {
+                        $tmpsearch = [];
+                        foreach($this->search as $key => $value)
+                        {
+                                $tmpsearch[] = $key . "=" . $value;
+                        }
+                        $search = implode("^", $tmpsearch);
+                        $query['sysparm_query'] = $search;
+                }
+		$query['sysparm_limit'] = $this->pagination;
+		return $query;
+        }
 
 	//Perform a GET request to API to retrieve records.
 	public function get( $columns = ['*'] )
@@ -48,10 +50,7 @@ class ServiceNowQueryBuilder extends Builder
 		$verb = 'GET';
 		$url = env('SNOW_API_URL') . "/" . $this->model->table;
 		$params['auth'] = [env('SNOW_USERNAME'), env('SNOW_PASSWORD')];
-		if($this->search)
-		{
-			$params['query'] = $this->format_search();
-		}
+		$params['query'] = $this->format_query();
 		//Perform the api call
 		$response = $this->client->request($verb, $url, $params);
 		//get the body contents and decode json into an array.
@@ -74,7 +73,10 @@ class ServiceNowQueryBuilder extends Builder
 
 	public function first( $columns = ['*'] )
 	{
-		return $this->get()->first();
+		$this->pagination = 1;
+		$response = $this->get();
+		$this->pagination = 10000;
+		return $response->first();
 	}
 
 	public function put()

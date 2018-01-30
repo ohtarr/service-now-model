@@ -44,6 +44,13 @@ class ServiceNowModel extends Model
 						->get()
 						->first();
 	}
+
+	public static function first()
+	{
+		$instance = new static;
+		return $instance->newQuery()->first();
+	}
+
 	//Update a snow ticket
 	public function save(array $options = [])
 	{
