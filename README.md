@@ -57,8 +57,8 @@ or
 $incident = App\ServiceNowIncdient::find("1782fd1d6fcb87005d6dcd364b3ee4c1");
 ```
 or if you are brave:
-
+```
 $incidents = App\ServiceNowIncident::all();
-
+```
 
 
