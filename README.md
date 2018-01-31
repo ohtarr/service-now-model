@@ -1,7 +1,7 @@
 # ServiceNowModel
 A laravel Model to access service now table api
 
-You are nutz if you use this...ABSolutELY MENtal!
+You are nutz if you use this...ABSolutELY MENtal!:+1:
 
 Requires Laravel 5.x and GuzzleHttp
 
@@ -15,7 +15,7 @@ Set the following variables in your laravel .env file:
 Create a new model in your Laravel App folder PER table and set $table.  Example:
 
 ****************ServiceNowIncident.php**********************
-
+'''
 <?php
 
 namespace App;
@@ -38,6 +38,7 @@ class ServiceNowIncident extends ServiceNowModel
     }
 
 }
+'''
 
 ************************************************************
 
