@@ -48,8 +48,8 @@ class ServiceNowQueryBuilder extends Builder
 	{
 		// Get the API results of all the ID numbers we need to retrieve
 		$verb = 'GET';
-		$url = env('SNOW_API_URL') . "/" . $this->model->table;
-		$params['auth'] = [env('SNOW_USERNAME'), env('SNOW_PASSWORD')];
+		$url = $this->model->snowbaseurl . "/" . $this->model->table;
+		$params['auth'] = [$this->model->snowusername, $this->model->snowpassword];
 		$params['query'] = $this->format_query();
 		//Perform the api call
 		$response = $this->client->request($verb, $url, $params);
@@ -85,8 +85,8 @@ class ServiceNowQueryBuilder extends Builder
 		$json = json_encode($array);
 		// Get the API results of all the ID numbers we need to retrieve
 		$verb = 'PUT';
-		$url = env('SNOW_API_URL') . "/" . $this->model->table . '/' . $this->model->sys_id;
-		$params['auth'] = [env('SNOW_USERNAME'), env('SNOW_PASSWORD')];
+		$url = $this->model->snowbaseurl . "/" . $this->model->table . '/' . $this->model->sys_id;
+		$params['auth'] = [$this->model->snowusername, $this->model->snowpassword];
 		$params['headers'] = [
 			'Content-Type'	=> 'application/json',
 			'Accept'		=> 'application/json',
@@ -112,8 +112,8 @@ class ServiceNowQueryBuilder extends Builder
 		$json = json_encode($array);
 		// Get the API results of all the ID numbers we need to retrieve
 		$verb = 'POST';
-		$url = env('SNOW_API_URL') . "/" . $this->model->table;
-		$params['auth'] = [env('SNOW_USERNAME'), env('SNOW_PASSWORD')];
+		$url = $this->model->snowbaseurl . "/" . $this->model->table;
+		$params['auth'] = [$this->model->snowusername, $this->model->snowpassword];
 		$params['headers'] = [
 			'Content-Type'	=> 'application/json',
 			'Accept'		=> 'application/json',

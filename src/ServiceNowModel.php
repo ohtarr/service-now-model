@@ -9,6 +9,9 @@ class ServiceNowModel extends Model
 {
 	protected $guarded = [];
 
+	public $snowbaseurl;
+	public $snowusername;
+	public $snowpassword;
 	public $table;
 
 	public function newQuery()
@@ -23,7 +26,7 @@ class ServiceNowModel extends Model
     {
 		$instance = new static;
 		return $instance->newQuery()
-						->where('sys_created_by', '=', env('SNOW_USERNAME'))
+						->where('sys_created_by', '=', $this->snowusername)
 						->get();
     }
 
@@ -41,7 +44,6 @@ class ServiceNowModel extends Model
 		$instance = new static;
 		return $instance->newQuery()
 						->where('sys_id',"=", $sysid)
-						->get()
 						->first();
 	}
 
