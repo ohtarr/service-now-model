@@ -15,7 +15,7 @@ Set the following variables in your laravel .env file:
 Create a new model in your Laravel App folder PER table and set $table.  Example:
 
 ****************ServiceNowIncident.php**********************
-'''
+```
 <?php
 
 namespace App;
@@ -38,7 +38,7 @@ class ServiceNowIncident extends ServiceNowModel
     }
 
 }
-'''
+```
 
 ************************************************************
 
