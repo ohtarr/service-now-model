@@ -8,10 +8,11 @@ Requires Laravel 5.x and GuzzleHttp
 How to use :
 
 Set the following variables in your laravel .env file:
-'SNOW_API_URL' = https://yourcompany.service-now.com/api/now/v1/table
-'SNOW_USERNAME' =
-'SNOW_PASSWORD' =
-
+```
+'SNOWBASEURL' = https://yourcompany.service-now.com/api/now/v1/table
+'SNOWUSERNAME' =
+'SNOWPASSWORD' =
+```
 Create a new model in your Laravel App folder PER table and set $table.  Example:
 
 ****************ServiceNowIncident.php**********************
