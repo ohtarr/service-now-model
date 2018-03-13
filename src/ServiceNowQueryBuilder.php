@@ -25,7 +25,18 @@ class ServiceNowQueryBuilder extends Builder
         }
         public function where($column, $operator = NULL, $value = NULL, $boolean = 'and')
         {
-                $this->search[$column] = $value;
+                        $argscount = count(func_get_args());
+                        if($argscount == 2)
+                        {
+                                $value = $operator;
+                                $operator = "=";
+                        }
+                        $tmp = [
+                                "column"        =>      $column,
+                                "operator"      =>      $operator,
+                                "value"         =>      $value,
+                        ];
+                $this->search[] = $tmp;
                 return $this;
         }
 
@@ -34,9 +45,9 @@ class ServiceNowQueryBuilder extends Builder
                 if($this->search)
                 {
                         $tmpsearch = [];
-                        foreach($this->search as $key => $value)
+                        foreach($this->search as $search)
                         {
-                                $tmpsearch[] = $key . "=" . $value;
+                                $tmpsearch[] = $search['column'] . $search['operator'] . $search['value'];
                         }
                         $search = implode("^", $tmpsearch);
                         $query['sysparm_query'] = $search;
