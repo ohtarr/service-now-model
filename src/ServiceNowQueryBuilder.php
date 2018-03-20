@@ -94,7 +94,7 @@ class ServiceNowQueryBuilder extends Builder
                         // return an eloquent collection of models
                         return $this->getModel()->newCollection($models);
                 } else {
-                        return null;
+                        return collect();
                 }
         }
 
