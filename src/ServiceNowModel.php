@@ -16,9 +16,6 @@ class ServiceNowModel extends Model
 
         public function newQuery()
         {
-                $this->snowbaseurl = env('SNOW_API_URL');
-		$this->snowusername = env('SNOW_USERNAME');
-		$this->snowpassword = env('SNOW_PASSWORD');
                 $builder = new ServiceNowQueryBuilder();
                 $builder->setModel($this);
                 return $builder;
