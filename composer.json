@@ -4,7 +4,7 @@
     "description": "PHP7 Laravel5 component to connect to ServiceNow Table API",
     "keywords": [
         "php7",
-        "laravel5"
+        "laravel"
         ],
     "homepage": "http://github.com/ohtarr/service-now-model",
     "authors": [
@@ -17,7 +17,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0.3",
-        "laravel/framework": "5.*",
+        "laravel/framework": ">=5.1",
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
