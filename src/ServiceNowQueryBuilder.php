@@ -65,15 +65,15 @@ class ServiceNowQueryBuilder extends Builder
                 $params['auth'] = [$this->model->snowusername, $this->model->snowpassword];
                 $params['query'] = $this->format_query();
 
-                try
-                {
+                //try
+                //{
                         $response = $this->client->request($verb, $url, $params);
-                } catch (RequestException $e) {
+                //} catch (RequestException $e) {
                     //echo Psr7\str($e->getRequest());
                     //if ($e->hasResponse()) {
                     //    echo Psr7\str($e->getResponse());
                     //}
-                }
+                //}
 
                 if(isset($response))
                 {
